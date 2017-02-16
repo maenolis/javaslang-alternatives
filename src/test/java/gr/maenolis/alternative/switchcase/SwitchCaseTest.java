@@ -61,7 +61,7 @@ public class SwitchCaseTest {
     }
 
     @Test(expected = AssertionError.class)
-    public void funcationalMissMatch() {
+    public void funcationalMissMatchError() {
         final Switch<String> myCase = Switch.caseOfErroneous("javaslang");
         final String result = myCase.get(
                 Case.ofFunctional(str -> str.endsWith("lang"), str -> {return str;}),
@@ -73,5 +73,20 @@ public class SwitchCaseTest {
         );
 
         Assert.assertEquals(result, "javaslang4");
+    }
+
+    @Test(expected = AssertionError.class)
+    public void funcationalMissMatchSuccess() {
+        final Switch<String> myCase = Switch.caseOf("javaslang");
+        final String result = myCase.get(
+                Case.ofFunctional(str -> str.endsWith("lang"), str -> {return str;}),
+                Case.ofFunctional(str -> str.endsWith("lang2"), str -> {return str;}),
+                Case.ofFunctional(str -> str.endsWith("lang3"), str -> {return str;}),
+                Case.ofFunctional(str -> str.endsWith("lang4"), str -> {return str;}),
+                Case.ofFunctional(str -> str.endsWith("lang5"), str -> {return str;}),
+                Case.ofFunctional(str -> str.endsWith("lang6"), str -> {return str;})
+        );
+
+        Assert.assertNull(result);
     }
 }
