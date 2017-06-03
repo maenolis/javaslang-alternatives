@@ -34,7 +34,7 @@ public class SwitchCaseTest {
                 Cases.ofConsumable(str -> str.endsWith("lang5"), msg),
                 Cases.ofConsumable(str -> str.endsWith("lang6"), msg),
                 Cases.ofConsumable(str -> str.endsWith("lang7"), msg)
-        )
+        );
     }
 
     @Test
