@@ -1,6 +1,6 @@
-package gr.maenolis.alternative.switchcase;
+package com.github.maenolis.switchcase;
 
-import gr.maenolis.alternative.exception.AlternativeSwitchCaseException;
+import com.github.maenolis.switchcase.exception.AlternativeSwitchCaseException;
 
 public final class Switch<T> {
 

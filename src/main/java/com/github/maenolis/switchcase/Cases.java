@@ -1,4 +1,4 @@
-package gr.maenolis.alternative.switchcase;
+package com.github.maenolis.switchcase;
 
 import java.util.function.Consumer;
 import java.util.function.Function;

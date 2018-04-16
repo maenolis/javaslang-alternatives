@@ -1,4 +1,4 @@
-package gr.maenolis.alternative.switchcase;
+package com.github.maenolis.switchcase;
 
 public interface Case<T, R> {
 

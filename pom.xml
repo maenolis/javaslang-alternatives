@@ -4,9 +4,25 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>gr.maenolis</groupId>
-    <artifactId>switch-case</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <groupId>com.github.maenolis</groupId>
+    <artifactId>switchcase</artifactId>
+    <version>1.0.0</version>
+
+    <name>switchcase</name>
+    <description>A java switch case for lambdas (Java 8 predicates and functions)</description>
+    <url>https://github.com/maenolis/switchcase</url>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>https://github.com/maenolis/switchcase</url>
+    </scm>
 
     <dependencies>
 
@@ -28,6 +44,21 @@
                     <source>1.8</source>
                     <target>1.8</target>
                 </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

@@ -1,12 +1,13 @@
-package gr.maenolis.alternative.switchcase;
+package com.github.maenolis.switchcase.switchcase;
 
 import java.util.function.Consumer;
 import java.util.function.Function;
 
+import com.github.maenolis.switchcase.Cases;
+import com.github.maenolis.switchcase.Switch;
+import com.github.maenolis.switchcase.exception.AlternativeSwitchCaseException;
 import org.junit.Assert;
 import org.junit.Test;
-
-import gr.maenolis.alternative.exception.AlternativeSwitchCaseException;
 
 public class SwitchCaseTest {
 
