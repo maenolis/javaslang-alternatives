@@ -1,8 +1,8 @@
 package com.github.maenolis.switchcase;
 
-public interface Case<T, R> {
+import java.util.function.Function;
+
+public interface Case<T, R> extends Function<T, R> {
 
     boolean test(final T input);
-
-    R apply(final T input);
 }

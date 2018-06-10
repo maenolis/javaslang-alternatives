@@ -5,26 +5,16 @@ import com.github.maenolis.switchcase.exception.AlternativeSwitchCaseException;
 import java.util.List;
 import java.util.function.Function;
 
-public final class Switch<T, R> implements Function<T, R> {
+public class Switch<T, R> implements Function<T, R> {
 
-    private final boolean erroneous;
-    private final List<Case<T, R>> cases;
-    private final Case<T, R> defaultCase;
+    protected final List<Case<T, R>> cases;
 
     public static <T, R> SwitchBuilder.FlavouredSwitchBuilder<T, R> addCase(final Case<T, R> caze) {
         return SwitchBuilder.addCase(caze);
     }
 
-    Switch(List<Case<T, R>> cases, final boolean erroneous) {
+    Switch(List<Case<T, R>> cases) {
         this.cases = cases;
-        this.erroneous = erroneous;
-        this.defaultCase = null;
-    }
-
-    Switch(List<Case<T, R>> cases, final Case<T, R> defaultCase) {
-        this.cases = cases;
-        this.erroneous = false;
-        this.defaultCase = defaultCase;
     }
 
     @Override
@@ -34,21 +24,14 @@ public final class Switch<T, R> implements Function<T, R> {
                 return current.apply(value);
             }
         }
-        checkErroneous();
-        return checkDefault(value);
+        return null;
     }
 
-    private R checkDefault(final T value) {
-        if (defaultCase != null) {
-            return defaultCase.apply(value);
-        } else {
-            return null;
-        }
-    }
-
-    private void checkErroneous() {
-        if (erroneous) {
-            throw new AlternativeSwitchCaseException("No case matched.");
-        }
-    }
+//    private R checkDefault(final T value) {
+//        if (defaultCase != null) {
+//            return defaultCase.apply(value);
+//        } else {
+//            return null;
+//        }
+//    }
 }
