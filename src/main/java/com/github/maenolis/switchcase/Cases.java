@@ -7,11 +7,11 @@ import java.util.function.Predicate;
 public final class Cases {
 
 
-    public static <T> Case<T, Void> ofConsumable(final Predicate<T> predicate, final Consumer<T> consumer) {
+    public static <T> Case<T, Void> of(final Predicate<T> predicate, final Consumer<T> consumer) {
         return new ConsumableCase<>(predicate, consumer);
     }
 
-    public static <T, R> Case<T, R> ofFunctional(final Predicate<T> predicate, final Function<T, R> function) {
+    public static <T, R> Case<T, R> of(final Predicate<T> predicate, final Function<T, R> function) {
         return new FunctionalCase<>(predicate, function);
     }
 
